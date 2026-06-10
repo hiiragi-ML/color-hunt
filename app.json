@@ -8,6 +8,7 @@
     "userInterfaceStyle": "dark",
     "ios": {
       "supportsTablet": false,
+      "bundleIdentifier": "com.shushucchi.colorhunt",
       "infoPlist": {
         "NSCameraUsageDescription": "テーマカラーの写真を撮影するためにカメラを使用します",
         "NSPhotoLibraryUsageDescription": "撮影した写真を保存するためにフォトライブラリへのアクセスが必要です",
@@ -48,12 +49,7 @@
           "isAccessMediaLocationEnabled": true
         }
       ],
-      [
-        "expo-notifications",
-        {
-          "sounds": []
-        }
-      ]
+      "expo-notifications"
     ],
     "scheme": "color-hunt"
   }
