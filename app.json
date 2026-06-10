@@ -1,25 +1,60 @@
 {
   "expo": {
-    "name": "color_hunt",
+    "name": "Color Hunt",
     "slug": "color_hunt",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSCameraUsageDescription": "テーマカラーの写真を撮影するためにカメラを使用します",
+        "NSPhotoLibraryUsageDescription": "撮影した写真を保存するためにフォトライブラリへのアクセスが必要です",
+        "NSPhotoLibraryAddUsageDescription": "撮影した写真を保存するためにフォトライブラリへのアクセスが必要です"
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#0a0a0a",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_IMAGES"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "テーマカラーの写真を撮影するためにカメラを使用します"
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "撮影した写真を保存するためにフォトライブラリへのアクセスが必要です",
+          "savePhotosPermission": "撮影した写真を保存するためにフォトライブラリへのアクセスが必要です",
+          "isAccessMediaLocationEnabled": true
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "sounds": []
+        }
+      ]
+    ],
+    "scheme": "color-hunt"
   }
 }
